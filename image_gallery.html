@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Image Gallery</title>
+<script>
+$(document).ready(function(){
+    $("#filter").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#gallery li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  $("#all").click(function(){
+        $("#select")
+        $("li").show("slow");
+    });
+    $("#animal").click(function(){
+        $(".animal").show("slow");
+        $(".Place").hide("slow");
+        $(".nature").hide("slow");
+    });
+    $("#place").click(function(){
+        $(".Place").show("slow");
+        $(".nature").hide("slow");
+        $(".animal").hide("slow");
+    });
+    $("#nature").click(function(){
+        $(".nature").show("slow");
+        $(".Place").hide("slow");
+        $(".animal").hide("slow");
+    });
+});
+function opencat(evt) {
+  var i,tablinks;
+  for (i = 0; i < 5; ++i) {
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < 5; ++i) {
+    tablinks[i].className = tablinks[i].className.replace("w3-light-blue", "w3-blue");
+  }
+  evt.currentTarget.className += "w3-light-blue";
+}
+</script>
+<style>
+    img{
+        width: 125px;
+        height: 125px;
+    }
+</style>
+</head>
+<body>
+    <div class="w3-container w3-black w3-centered" style="padding-bottom: 24px;">
+        <h1>Image Gallery</h1>
+        <p>Search the images you want!</p>
+        <input id="filter" type="text" placeholder="Search..">
+        <p id="select">Or select the category!</p><br>
+        <div class="w3-bar">  
+            <button class="w3-button w3-bar-item w3-light-blue tablink" id="all" onclick="opencat(event)">All</button>
+            <button class="w3-button w3-bar-item tablink" id="animal" onclick="opencat(event)">Animals</button>
+            <button class="w3-button w3-bar-item tablink" id="place" onclick="opencat(event)">Place</button>    
+            <button class="w3-button w3-bar-item tablink" id="nature" onclick="opencat(event)">Nature</button>
+        </div>
+        <br>
+        <div class="w3-container">
+            <ul class="w3-ul" id="gallery">
+                <li class="animal tab">Cat <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174272358001950821/image.png?ex=6566fd5b&is=6554885b&hm=20e1dcb51d0ecfa0dc3a9663f02566e95fb36ad70393af1d0cb58c18461c0ba0&" class="w3-image " alt="Cat"></li>
+                <li class="animal tab">Dog <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174272446212358225/help-me-find-the-origin-of-this-damn-dog-ive-looked-up-like-v0-zj7m5n0a2xx91.png?ex=6566fd70&is=65548870&hm=1679e55893b4993660d0c54f5b8e45ee5ff26814094e6a0aa6e016d7a4ead611&https://cdn.discordapp.com/attachments/1168136941787688961/1174272446212358225/help-me-find-the-origin-of-this-damn-dog-ive-looked-up-like-v0-zj7m5n0a2xx91.png?ex=6566fd70&is=65548870&hm=1679e55893b4993660d0c54f5b8e45ee5ff26814094e6a0aa6e016d7a4ead611&" class="w3-image" alt="Dog"></li>
+                <li class="animal tab">Fish <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174272526139015178/id-please-ik-its-a-meme-im-not-joking-v0-pveese881gna1.png?ex=6566fd83&is=65548883&hm=91b566b3b8d20c88e3ec6eefd2f36c1c86f03777acf9d99b389a576b8aed5310&" class="w3-image" alt="Fish" > </li>
+                <li class="Place tab">Twin Tower <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174272600411754516/800x-master-pnp-ppmsca-71300-71335u.png?ex=6566fd94&is=65548894&hm=9fe77e1ad9a79c170e71f5132f10b2e3789ab836dd5a53f7846411a96ef25411&" class="w3-image" alt="Twin Towers" > </li>
+                <li class="Place tab">Tilted Towers <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174272657496231956/latest.png?ex=6566fda2&is=655488a2&hm=f1f44273a9ebcda553cf72141be0ffbfa89b8fb8e3a6ef1f816cf812f273baee&" class="w3-image" alt="Tilted Towers" > </li>
+                <li class="Place tab">Lotus <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174273135051296788/Lotus_Banner.png?ex=6566fe14&is=65548914&hm=27106eb185b53079ddd273a27e1819d160a5964661a89dbd9ff62d32ca26d0a2&" class="w3-image" alt="Lotus"></li>
+                <li class="nature tab">Tree <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174273313757990954/FelELqpXkAYD9wR.png?ex=6566fe3e&is=6554893e&hm=a4790961b43aaaedf910dbfee368807606afc7b7f8866de72bcfb97cc47c7c14&" class="w3-image" alt="Tree" > </li>
+                <li class="nature tab">Grass <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174273402375245865/green-grass-close-up.png?ex=6566fe54&is=65548954&hm=275aa73cc768e66411034140ac8f711bda0d325734d5650ee6edd2fe400b03ac&" class="w3-image" alt="Grass" ></li>
+                <li class="Place tab">Shower <img src="https://cdn.discordapp.com/attachments/1168136941787688961/1174273480565477477/Mira_Azora_Dual_Deluge_Spray.png?ex=6566fe66&is=65548966&hm=2476da4bb9b322b9ee1a952836a7b2ebcfb49a32bd7b487b3a13ec2613441fdf&" class="w3-image" alt="Shower" ></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
