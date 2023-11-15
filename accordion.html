@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion FAQs</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="jquery-3.7.1.min.js"></script>
+<script>
+function faq(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+</head>
+<body>
+    <div class="w3-container w3-indigo" style="padding-bottom: 24px;">
+    <div class="w3-panel">
+        <h1>Very Important Frequently Asked Questions!!</h1>
+    </div>
+    <button class="accordion w3-btn w3-block w3-black w3-hover-grey w3-left-align" onclick="faq('1')">What is the name of an American Bee?</button>
+    <div class="w3-container w3-hide" id="1">
+        <p>USB!</p>
+    </div>
+    <button class="accordion w3-btn w3-block w3-black w3-hover-grey w3-left-align" onclick="faq('2')">What do you call a person with no nose and body?</button>
+    <div class="w3-container w3-hide" id="2">
+        <p>Nobody knows!</p>
+    </div>
+    <button class="accordion w3-btn w3-block w3-black w3-hover-grey w3-left-align" onclick="faq('3')">What is a cow caught in an Earthquake?</button>
+    <div class="w3-container w3-hide" id="3">
+        <p>Milkshake!</p>
+    </div>
+</div>
+</body>
+</html>

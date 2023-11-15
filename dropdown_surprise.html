@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Dropdown Surprise</title>
+<script>
+function dropdown() {
+  var x = document.getElementById("bar");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+$(document).ready(function(){
+    $(".boo").mouseenter(function(){
+        $(".boo").show("fast");
+  });
+});
+</script>
+</head>
+<body>
+    <div class="w3-container w3-black" style="padding-bottom: 24px;">
+        <h1>Navigation</h1>
+        <div class="w3-bar w3-indigo">
+        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <div class="w3-dropdown-click">
+            <button onclick="dropdown()" class="w3-button w3-indigo">A Dropdown</button>
+            <div class="w3-dropdown-content w3-bar-block w3-border w3-card-4 w3-animate-top" id="bar">
+                <p class="w3-bar-item w3-button">This</p>
+                <p class="w3-bar-item w3-button">is</p>
+                <p class="w3-bar-item w3-button">the</p>
+                <p class="w3-bar-item w3-button">end</p>
+                <a href="https://media.tenor.com/FFT4ra-XzRkAAAAd/nose-fur.gif" class="w3-bar-item w3-button boo w3-text-white">Surprise!!</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
